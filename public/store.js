@@ -30,8 +30,10 @@ const purchases = document.querySelectorAll('.shop-item button');
 purchases.forEach(item => item.addEventListener('click', purchaseClicked))
 
 function purchaseClicked(){
-  item = this.dataset.itemId;
+  let find = document.querySelector('.selected');
+  if(find) find.classList.remove('selected');
   this.classList.add('selected');
+  
 
   let price = parseFloat(this.value) * 100;
   stripeHandler.open({
