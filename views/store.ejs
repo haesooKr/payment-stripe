@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://checkout.stripe.com/checkout.js" defer></script>
+    <script>
+      var stripePublicKey = '<%= stripePublicKey %>'
+    </script>
+    <script src="store.js" defer></script>
   </head>
   <body>
     <% items.item.forEach(function(item){ %>
@@ -12,8 +17,8 @@
       <h1>Buy 1 <%=item.name%> for developer</h1>
       <img src="./Image/<%=item.name%>.jpg" alt="coffee" width="200px" />
       <label for="btn-<%=item.name%>"
-        ><%=item.name%> <%=item.price / 100%></label
-      ><button id="btn-<%=item.name%>">ADD TO CART</button>
+        ><%=item.name%> $<%=item.price / 100%></label
+      ><button id="btn-<%=item.name%>" value="<%= item.price / 100 %>">Purchase</button>
     </div>
     <% })%>
   </body>
