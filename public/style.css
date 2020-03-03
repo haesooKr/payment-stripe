@@ -1,9 +1,14 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: rgb(255, 235, 205);
 }
 
 .shop-item {
@@ -11,4 +16,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.shop-item h1 {
+  text-shadow: black 1px 1px;
+  color: white;
+}
+
+.shop-item label {
+  color: black;
+  margin-top: 5px;
+}
+.shop-item button {
+  margin-top: 5px;
+  border: 1px solid rgb(0, 183, 255);
+  background-color: rgb(196, 238, 255);
+  color: rgb(114, 114, 114);
 }
